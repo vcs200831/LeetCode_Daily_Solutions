@@ -1,3 +1,6 @@
+from typing import List
+from collections import defaultdict
+
 class Solution:
     def beautifulSubsets(self, nums: List[int], k: int) -> int:
         total_count = 1
@@ -29,4 +32,11 @@ class Solution:
                 prev2, prev1 = prev1, curr
                 prev_num = num
             total_count *= curr
-        return total_count - 1
+        
+        return total_count - 1  # Subtract 1 to exclude the empty subset
+
+# Example usage:
+solution = Solution()
+nums = [10, 4, 5, 7, 2, 1]
+k = 3
+print(solution.beautifulSubsets(nums, k))  # Expected Output: 23
